@@ -1,0 +1,29 @@
+extends layout
+
+block content
+        .panel.panel-default
+            .panel-heading Telemetry Control
+            .panel-body        
+                 
+                form(action='/telemetry', method='post')
+                    fieldset
+                        .form-group.row
+                            .col-sm-1
+                                button.btn.btn-default(type='submit', name="action", value='start') start tele                                
+                            .col-sm-1
+                                button.btn.btn-default(type='submit', name="action", value='stop') stop tele
+                            .col-sm-1
+                                button.btn.btn-default(type='submit', name="action", value='replay') replay 
+                            .col-sm-1
+                                button.btn.btn-danger(type='submit', name="action", value='fault') simulate fault                               
+
+        .panel.panel-default
+            .panel-heading Status
+            .panel-body    
+                p Last Sent Message: #{lsm}
+                form(action='/telemetry', method='post')
+                    fieldset
+                        .form-group.row
+                           .col-sm-2
+                                button.btn.btn-primary(type='submit', name="action", value='refresh') refresh
+        

@@ -1,0 +1,13 @@
+extends layout
+
+block content                       
+        .panel.panel-default
+            .panel-heading Tool Config
+            .panel-body
+                form(action='/config', method='post')
+                    fieldset
+                        .form-group.row
+                            .col-sm-10
+                                input.form-control(type='text', name='interval', placeholder='enter interval in miliseconds (default = 10000)') 
+                            .col-sm-2
+                                button.btn.btn-primary(type='submit', name="action") submit 
